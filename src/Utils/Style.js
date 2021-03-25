@@ -6,9 +6,9 @@ const styles = StyleSheet.create({
     height: 110,
     width: '80%',
   },
-  signUpContainer: {
+  signContainer: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
     flexDirection: 'column',
     // alignItems: 'center',
     // marginVertical:10,

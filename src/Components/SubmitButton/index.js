@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Alert, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
+import styles from './style'
 
 export class SubmitButton extends Component {
     render(props) {
@@ -28,15 +29,3 @@ export class SubmitButton extends Component {
 }
 
 export default SubmitButton
-
-const styles = StyleSheet.create({
-    btnPrimary: {
-        // backgroundColor: 'yellow',
-        height: 50,
-        width:200,
-        borderRadius: 25,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 10,
-      },
-});

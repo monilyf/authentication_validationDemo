@@ -59,11 +59,12 @@ export class SignIn extends Component {
             <ImageBackground
               source={require('../../assets/images/bg1.png')}
               style={(styles.bgImg, {height: 800})}>
-              <Header />
-              <Text style={{fontSize: 32, textAlign: 'center'}}> Login </Text>
+              <View style={{flex:1,marginTop:80}}> 
+              <Header/>
+              <Text style={{fontSize: 32, textAlign: 'center',marginTop:10,marginBottom:30}}> Login </Text>
 
               <View
-                style={{flex: 1, marginTop: 50, marginHorizontal: 20, flex: 1}}>
+                style={[styles.signContainer]}>
                 <InputContainer
                   iconName="email"
                   placeholder="Enter Email"
@@ -109,6 +110,7 @@ export class SignIn extends Component {
                     </Text>
                   </TouchableOpacity>
                 </View>
+              </View>
               </View>
             </ImageBackground>
           </KeyboardAvoidingView>

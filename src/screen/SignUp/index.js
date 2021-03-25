@@ -279,7 +279,7 @@ export class Register extends Component {
                 Create Account{' '}
               </Text>
 
-              <View style={styles.signUpContainer}>
+              <View style={styles.signContainer}>
                 <InputContainer
                   iconName="person"
                   errorIcon={this.state.errorIcon}
@@ -437,19 +437,7 @@ export class Register extends Component {
 export default Register;
 
 const style1 = StyleSheet.create({
-  inputContainer: {
-    flexDirection: 'row',
-    marginTop: 10,
-    marginBottom: 20,
-    borderColor: '#FFF',
-    borderWidth: 0.5,
-    borderRadius: 14,
-    backgroundColor: '#fff',
-    padding: 13,
-    width: '100%',
-  },
-
-  picker: {
+   picker: {
     backgroundColor: 'red',
   },
   inputIcon: {marginLeft: 10, marginRight: 20, fontSize: 20, color: '#28388f'},
