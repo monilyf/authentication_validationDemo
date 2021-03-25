@@ -27,13 +27,12 @@ const styles = StyleSheet.create({
   },
   primaryText:{
     fontSize:16,
-    marginTop:28,
-    color:'#68abab'
-    // marginLeft:-10
+    marginTop:7,
+    color:'#68abab',
+   
   },
   title: {
     fontSize: 20,
-    marginLeft: 30,
     fontWeight:'bold',
     color:'#68abab',
     // marginTop: 20,
