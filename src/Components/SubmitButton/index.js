@@ -6,7 +6,7 @@ import styles from './style'
 export class SubmitButton extends Component {
     render(props) {
         return (
-          // <TouchableOpacity onPress={()=>Alert.alert('Registered Successfully')}>
+          // <TouchableOpacity onPress={()=>Alert.alert('ed Successfully')}>
           <TouchableOpacity onPress={this.props.onPress} style={{alignItems:'center'}}>
           <LinearGradient
           // colors={['#00d2ff', '#3a7bd5']}

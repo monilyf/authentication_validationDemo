@@ -20,8 +20,9 @@ import InputContainer from '../../Components/InputContainer';
 import Picker from 'react-native-country-picker-modal';
 // import {validateEmail,validateMobile,validateName,validatePassword,checkPassword} from './validation'
 import SubmitButton from '../../Components/SubmitButton';
+import Routes from '../../router/routes';
 
-export class Register extends Component {
+export class SignUp extends Component {
   constructor(props) {
     super(props);
 
@@ -109,7 +110,7 @@ export class Register extends Component {
         alert('Registered Successfully!', registered_data);
         console.log('registered_data from register:', registered_data);
 
-        this.props.navigation.navigate('SignIn');
+        this.props.navigation.navigate(Routes.SignIn);
       }
     }
   };
@@ -418,7 +419,7 @@ export class Register extends Component {
 
                 <View style={styles.footer}>
                   <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('SignIn')}>
+                    onPress={() => this.props.navigation.navigate(Routes.SignIn)}>
                     <Text style={styles.footerText}>
                       Already Registered!{' '}
                       <Text style={{fontWeight: 'bold'}}>Login</Text>
@@ -434,7 +435,7 @@ export class Register extends Component {
   }
 }
 
-export default Register;
+export default SignUp;
 
 const style1 = StyleSheet.create({
    picker: {

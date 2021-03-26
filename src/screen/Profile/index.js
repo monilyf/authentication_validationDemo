@@ -11,7 +11,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import ValueContainer from '../../Components/ValueContainer';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from "./style";
-export class Details extends Component {
+import Routes from '../../router/routes'
+export class Profile extends Component {
   constructor(props) {
     super(props);
 
@@ -93,7 +94,7 @@ export class Details extends Component {
                
                   onPress={() => {
                     AsyncStorage.clear();
-                    this.props.navigation.navigate('SignIn');
+                    this.props.navigation.navigate(Routes.SignIn);
                   }}>
                   <Text
                     style={styles.logout}>
@@ -109,5 +110,5 @@ export class Details extends Component {
   }
 }
 
-export default Details;
+export default Profile;
 

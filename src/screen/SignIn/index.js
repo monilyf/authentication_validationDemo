@@ -12,6 +12,7 @@ import {
 import {ScrollView} from 'react-native-gesture-handler';
 import {Header} from '../../Components/Header';
 import styles from '../../Utils/Style';
+import Routes from '../../router/routes'
 import InputContainer from '../../Components/InputContainer';
 import Picker from 'react-native-country-picker-modal';
 import SubmitButton from '../../Components/SubmitButton';
@@ -35,7 +36,7 @@ export class SignIn extends Component {
       alert('please fill password');
       return false;
     }
-    this.props.navigation.navigate('Auth', {
+    this.props.navigation.navigate(Routes.Auth, {
       email: this.state.email,
       password: this.state.password,
     });
@@ -103,10 +104,10 @@ export class SignIn extends Component {
 
                 <View style={styles.footer}>
                   <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('Register')}>
+                    onPress={() => this.props.navigation.navigate(Routes.SignUp)}>
                     <Text style={styles.footerText}>
                       Haven't Registered Yet!{' '}
-                      <Text style={{fontWeight: 'bold'}}>Register</Text>
+                      <Text style={{fontWeight: 'bold'}}>SignUp</Text>
                     </Text>
                   </TouchableOpacity>
                 </View>

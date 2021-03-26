@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Alert, Image, Text, View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Routes from '../router/routes'
 
 export class Auth extends Component {
   constructor(props) {
@@ -34,14 +35,14 @@ export class Auth extends Component {
         parsed.password === this.state.password
       )
         // this.state.isAuthenticated=true;
-        this.props.navigation.replace('Home');
+        this.props.navigation.replace(Routes.Home);
       else {
         Alert.alert('Email or Password not valid');
-        this.props.navigation.navigate('SignIn');
+        this.props.navigation.navigate(Routes.SignIn);
       }
     } catch (error) {
       alert("You don't have account!");
-      this.props.navigation.navigate('SignIn');
+      this.props.navigation.navigate(Routes.SignIn);
 
       //
     }
