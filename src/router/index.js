@@ -51,9 +51,7 @@ class RootNavigator extends Component {
       // </View>
 
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{
-                    headerShown: false
-                }}>
+        <Stack.Navigator >
           {this.state.isAuthenticated ?
             <>
               <Stack.Screen
@@ -81,23 +79,31 @@ class RootNavigator extends Component {
               <Stack.Screen
                 name={Routes.Details}
                 component={Details}
-                
+                options={{
+                    headerShown: false
+                }}
               />
               <Stack.Screen
                 name={Routes.Profile}
                 component={Profile}
-                
+                options={{
+                    headerShown: false
+                }}
               />
               <Stack.Screen
                 name={Routes.SignIn}
                 component={SignIn}
-               
+                options={{
+                    headerShown: false
+                }}
               />
 
               <Stack.Screen
                 name={Routes.Auth}
                 component={Auth}
-                
+                options={{
+                    headerShown: false
+                }}
               />
 
             </>
@@ -106,17 +112,23 @@ class RootNavigator extends Component {
               <Stack.Screen
                 name={Routes.SignIn}
                 component={SignIn}
-                
+                options={{
+                    headerShown: false
+                }}
               />
               <Stack.Screen
                 name={Routes.Auth}
                 component={Auth}
-                
+                options={{
+                    headerShown: false
+                }}
               />
               <Stack.Screen
                 name={Routes.SignUp}
                 component={SignUp}
-                
+                options={{
+                    headerShown: false
+                }}
               />
              
             </>
@@ -143,22 +155,3 @@ export default RootNavigator;
 //     options={{headerShown: false}}
 //   />
 // )}
-import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationContainer} from '@react-navigation/native';
-import Routes from './routes';
-import Authenticated from './Authenticated'
-import NotAuthenticated from './NotAutheenticated'
-
-const Stack = createStackNavigator();
-
-export const RootNavigator = ()=>{
-    return(
-        <NavigationContainer>
-            <Stack.Navigator >
-                <Stack.Screen name={Routes.NotAuthenticated} component={NotAuthenticated} />
-                <Stack.Screen name={Routes.Authenticated} component={Authenticated} />
-            </Stack.Navigator>
-        </NavigationContainer>
-    );
-}

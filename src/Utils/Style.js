@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import React from 'react'
 import {View, Text, StyleSheet} from 'react-native';
 
@@ -39,45 +38,3 @@ const styles = StyleSheet.create({
 });
 
 export default styles;
-=======
-// import React from 'react'
-import {View, Text, StyleSheet} from 'react-native';
-
-const styles = StyleSheet.create({
-  logo: {
-    height: 110,
-    width: '80%',
-  },
-  signContainer: {
-    flex: 1,
-    paddingHorizontal: 30,
-    flexDirection: 'column',
-    // alignItems: 'center',
-    // marginVertical:10,
-    // backgroundColor:'red'
-  },
-  bgImg: {
-    flex: 1,
-    width: '100%',
-    // height:800,
-    resizeMode: 'cover', //        <ImageBackground source={require('../assets/images/signupBG.jpg')} style={styles.bgImg}>
-  },
-
-  errorMsg: {
-    color: 'red',
-    fontStyle: 'italic',
-    marginLeft: 23,
-  },
-  footer: {
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  footerText: {
-    textAlign: 'center',
-    fontSize: 16,
-  },
-  //   inputIcon: { marginTop: 15,marginLeft:20, position: 'absolute',fontSize:20,color:colors.primary, },
-});
-
-export default styles;
->>>>>>> c6b6b7943909f6a3bd95a12249d6bfeebf4a92dc
