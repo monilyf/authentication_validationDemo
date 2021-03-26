@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, {Component} from 'react';
 import {
   ImageBackground,
@@ -123,7 +122,6 @@ export class SignIn extends Component {
 }
 
 export default SignIn;
-=======
 import React, {Component} from 'react';
 import {
   ImageBackground,
@@ -247,4 +245,3 @@ export class SignIn extends Component {
 }
 
 export default SignIn;
->>>>>>> c6b6b7943909f6a3bd95a12249d6bfeebf4a92dc

@@ -1,4 +1,3 @@
-<<<<<<< HEAD:src/Components/SubmitButton/index.js
 import React, { Component } from 'react'
 import { Alert, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
@@ -30,7 +29,7 @@ export class SubmitButton extends Component {
 }
 
 export default SubmitButton
-=======
+
 import React, { Component } from 'react'
 import { Alert, StyleSheet, Text, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
@@ -62,4 +61,4 @@ export class SubmitButton extends Component {
 }
 
 export default SubmitButton
->>>>>>> c6b6b7943909f6a3bd95a12249d6bfeebf4a92dc:src/Components/SubmitButton.js
+
