@@ -12,6 +12,7 @@ import ValueContainer from '../../Components/ValueContainer';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from "./style";
 import Routes from '../../router/routes'
+import { CommonActions } from '@react-navigation/routers';
 export class Profile extends Component {
   constructor(props) {
     super(props);
@@ -47,6 +48,23 @@ export class Profile extends Component {
       alert(error);
     }
   };
+
+  resetStack = CommonActions.reset({
+    index:0,
+    routes:[
+      {name:Routes.Splash}
+    ],
+  });
+
+  removeAuthentication = async ()=>{
+    try{
+      console.log('Logout')
+      await AsyncStorage.clear();
+      this.props.navigation.dispatch(this.resetStack);
+    } catch(e){
+      console.log(e)
+    }
+  }
 
   render(props) {
     // console.log('email render', this.state.email, '---', this.state.password);
@@ -92,10 +110,7 @@ export class Profile extends Component {
               <View style={styles.logoutbtn}>
                 <TouchableOpacity
                
-                  onPress={() => {
-                    AsyncStorage.clear();
-                    this.props.navigation.navigate(Routes.SignIn);
-                  }}>
+                  onPress={() => {this.removeAuthentication()}}>
                   <Text
                     style={styles.logout}>
                     Logout

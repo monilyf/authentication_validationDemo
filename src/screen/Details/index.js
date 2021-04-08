@@ -6,11 +6,11 @@ import SubmitButton from '../../Components/SubmitButton'
 
 
 const Details = (props) => {
-    const {title,founder,description,logo,link}=props.route.params;
-    // console.log(title,founder,logo)
-    var url=JSON.stringify({link});
-    console.log(link)
-    console.log(typeof(url),url)
+    const {title,url}=props.route.params;
+    // console.log(avatar,first_name,last_name)
+    // var url=JSON.stringify({link});
+    // console.log(link)
+    // console.log(typeof(url),url)
 
     
     return (
@@ -19,18 +19,18 @@ const Details = (props) => {
             <Image style={styles.headBG} resizeMode='cover' source={require('../../assets/images/HeadBG.jpg')}/>
             <View style={styles.descriptionContainer}>
             <View style={styles.imageContainer}>
-            <Image style={styles.image} source={logo}/>
+            <Image style={styles.image} source={{uri:url}}/>
             </View>
 
             <View style={{marginHorizontal:30,bottom:40}}>
-            <Text style={{fontSize:22,color:'#000'}}>By {' '}<Text style={styles.founder}>{founder}</Text></Text>
+            <Text style={{fontSize:22,color:'#000'}}>By {' '}<Text style={styles.founder}>{title}</Text></Text>
             </View>
            
-            <Text style={styles.desc}>{description}</Text>
-            <SubmitButton
+            {/* <Text style={styles.desc}>{description}</Text> */}
+            {/* <SubmitButton
                   onPress={ ()=> Linking.openURL(link) } 
                   buttonText="Learn More"
-                />
+                /> */}
 
 
             </View>

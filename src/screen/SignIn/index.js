@@ -36,7 +36,7 @@ export class SignIn extends Component {
       alert('please fill password');
       return false;
     }
-    this.props.navigation.navigate(Routes.Auth, {
+    this.props.navigation.navigate("Auth", {
       email: this.state.email,
       password: this.state.password,
     });

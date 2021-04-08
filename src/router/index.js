@@ -3,43 +3,25 @@ import { View, Text } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Routes from './routes';
-// import Authenticated from './Authenticated';
-// import NotAuthenticated from './NotAuthenticated';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import Authenticated from './Authenticated';
+import NotAuthenticated from './NotAuthenticated';
 import SplashScreen from '../screen/SplashScreen';
-import Home from '../screen/Home';
-import Details from '../screen/Details';
-import Profile from '../screen/Profile';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import SignIn from '../screen/SignIn';
-import SignUp from '../screen/SignUp';
-import Auth from '../Authentication/Auth';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+// import SplashScreen from '../screen/SplashScreen';
+// import Home from '../screen/Home/Home';
+// import Details from '../screen/Details';
+// import Profile from '../screen/Profile';
+// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// import SignIn from '../screen/SignIn';
+// import SignUp from '../screen/SignUp';
+// import Auth from '../Authentication/Auth';
 
 
 
 const Stack = createStackNavigator();
 
 class RootNavigator extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isAuthenticated: false,
-    };
-  }
-  componentDidMount() {
-    console.log('router didMount');
-    this.checkAuthentication();
-  }
-
-  checkAuthentication = async () => {
-    let authenticated = await AsyncStorage.getItem('registered_data');
-    console.log('checkAuth Authenticated val - ', authenticated);
-    if (authenticated != null) {
-      this.setState({ isAuthenticated: true });
-    } else {
-      this.setState({ isAuthenticated: false });
-    }
-  };
+  
 
   render() {
     return (
@@ -51,89 +33,11 @@ class RootNavigator extends Component {
       // </View>
 
       <NavigationContainer>
-        <Stack.Navigator >
-          {this.state.isAuthenticated ?
-            <>
-              <Stack.Screen
-                name={Routes.Home}
-                component={Home}
-                options={({ navigation }) => ({
-                  title: 'Home',
-                  headerStyle: {
-                    backgroundColor: '#e0f4f4',
-                  },
-                  headerTintColor: '#2e7575',
-                  headerTitleAlign: 'center',
-                  headerRight: () => (
-                    <Icon
-                      onPress={() => navigation.navigate(Routes.Profile)}
-                      name="account-details" //"person-outline"
-                      color="#2e7575"
-                      size={35}
-                      s
-                      style={{ marginRight: 20 }}
-                    />
-                  ),
-                })}
-              />
-              <Stack.Screen
-                name={Routes.Details}
-                component={Details}
-                options={{
-                    headerShown: false
-                }}
-              />
-              <Stack.Screen
-                name={Routes.Profile}
-                component={Profile}
-                options={{
-                    headerShown: false
-                }}
-              />
-              <Stack.Screen
-                name={Routes.SignIn}
-                component={SignIn}
-                options={{
-                    headerShown: false
-                }}
-              />
-
-              <Stack.Screen
-                name={Routes.Auth}
-                component={Auth}
-                options={{
-                    headerShown: false
-                }}
-              />
-
-            </>
-            :
-            <>
-              <Stack.Screen
-                name={Routes.SignIn}
-                component={SignIn}
-                options={{
-                    headerShown: false
-                }}
-              />
-              <Stack.Screen
-                name={Routes.Auth}
-                component={Auth}
-                options={{
-                    headerShown: false
-                }}
-              />
-              <Stack.Screen
-                name={Routes.SignUp}
-                component={SignUp}
-                options={{
-                    headerShown: false
-                }}
-              />
-             
-            </>
-          }
-        </Stack.Navigator>
+       <Stack.Navigator screenOptions={{headerShown:false}} initialRouteName={Routes.Splash}>
+         <Stack.Screen name={Routes.Splash} component={SplashScreen} />
+         <Stack.Screen name={Routes.Authenticated} component={Authenticated} />
+         <Stack.Screen name={Routes.NotAuthenticated} component={NotAuthenticated}/>
+       </Stack.Navigator>
       </NavigationContainer>
     );
   }
@@ -155,3 +59,88 @@ export default RootNavigator;
 //     options={{headerShown: false}}
 //   />
 // )}
+
+
+// <Stack.Navigator >
+// {this.state.isAuthenticated ?
+//   <>
+//     <Stack.Screen
+//       name={Routes.Home}
+//       component={Home}
+//       options={({ navigation }) => ({
+//         title: 'Home',
+//         headerStyle: {
+//           backgroundColor: '#e0f4f4',
+//         },
+//         headerTintColor: '#2e7575',
+//         headerTitleAlign: 'center',
+//         headerRight: () => (
+//           <Icon
+//             onPress={() => navigation.navigate(Routes.Profile)}
+//             name="account-details" //"person-outline"
+//             color="#2e7575"
+//             size={35}
+//             s
+//             style={{ marginRight: 20 }}
+//           />
+//         ),
+//       })}
+//     />
+//     <Stack.Screen
+//       name={Routes.Details}
+//       component={Details}
+//       options={{
+//           headerShown: false
+//       }}
+//     />
+//     <Stack.Screen
+//       name={Routes.Profile}
+//       component={Profile}
+//       options={{
+//           headerShown: false
+//       }}
+//     />
+//     <Stack.Screen
+//       name={Routes.SignIn}
+//       component={SignIn}
+//       options={{
+//           headerShown: false
+//       }}
+//     />
+
+//     <Stack.Screen
+//       name={Routes.Auth}
+//       component={Auth}
+//       options={{
+//           headerShown: false
+//       }}
+//     />
+
+//   </>
+//   :
+//   <>
+//     <Stack.Screen
+//       name={Routes.SignIn}
+//       component={SignIn}
+//       options={{
+//           headerShown: false
+//       }}
+//     />
+//     <Stack.Screen
+//       name={Routes.Auth}
+//       component={Auth}
+//       options={{
+//           headerShown: false
+//       }}
+//     />
+//     <Stack.Screen
+//       name={Routes.SignUp}
+//       component={SignUp}
+//       options={{
+//           headerShown: false
+//       }}
+//     />
+   
+//   </>
+// }
+// </Stack.Navigator>

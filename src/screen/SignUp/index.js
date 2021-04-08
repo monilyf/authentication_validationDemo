@@ -17,7 +17,7 @@ import {Header} from '../../Components/Header';
 import styles from '../../Utils/Style';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import InputContainer from '../../Components/InputContainer';
-import Picker from 'react-native-country-picker-modal';
+import CountryPicker from 'react-native-country-picker-modal';
 // import {validateEmail,validateMobile,validateName,validatePassword,checkPassword} from './validation'
 import SubmitButton from '../../Components/SubmitButton';
 import Routes from '../../router/routes';
@@ -110,7 +110,7 @@ export class SignUp extends Component {
         alert('Registered Successfully!', registered_data);
         console.log('registered_data from register:', registered_data);
 
-        this.props.navigation.navigate(Routes.SignIn);
+        this.props.navigation.navigate('SignIn');
       }
     }
   };
@@ -363,9 +363,9 @@ export class SignUp extends Component {
                     size={20}
                     style={style1.inputIcon}
                   />
-                  <Picker style={style1.picker}  onSelect={(country) => this.setState({country:country})}>
-                    {/* <Picker.Item></Picker.Item> 
-                  </Picker>
+                  <CountryPicker style={style1.picker}  onSelect={(country) => this.setState({country:country.name})}>
+                    
+                  </CountryPicker>
                 </View> */}
                 <InputContainer
                   iconName="lock"
@@ -438,6 +438,16 @@ export class SignUp extends Component {
 export default SignUp;
 
 const style1 = StyleSheet.create({
+  inputContainer: {
+    flexDirection: 'row',
+    marginTop: 10,
+    marginBottom:16,
+    borderColor: '#FFF',
+    borderWidth: 0.5,
+    borderRadius: 14,
+    padding:14,
+    backgroundColor: '#fff',
+  },
    picker: {
     backgroundColor: 'red',
   },

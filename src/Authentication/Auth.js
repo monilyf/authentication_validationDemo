@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Alert, Image, Text, View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Routes from '../router/routes'
+import { CommonActions } from '@react-navigation/routers';
 
 export class Auth extends Component {
   constructor(props) {
@@ -25,6 +26,15 @@ export class Auth extends Component {
     this.checkAuthentication();
   }
 
+  resetToAuth = CommonActions.reset({
+    index:0,
+    routes:[
+      {name:Routes.Authenticated},
+    ],
+  });
+ 
+
+
   checkAuthentication = async () => {
     try {
       let user = await AsyncStorage.getItem('registered_data');
@@ -35,7 +45,7 @@ export class Auth extends Component {
         parsed.password === this.state.password
       )
         // this.state.isAuthenticated=true;
-        this.props.navigation.replace(Routes.Home);
+        this.props.navigation.dispatch(this.resetToAuth);
       else {
         Alert.alert('Email or Password not valid');
         this.props.navigation.navigate(Routes.SignIn);
