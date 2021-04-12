@@ -27,9 +27,11 @@ export default function BottomTabNavigator() {
     >
       <Tab.Screen
         name="Home"
+        title="Home"
         // component={Home}
         component={HomeScreenDrawer}
 
+        // options={{headerShown: false}}
 
         options={{
           tabBarLabel: 'HOME',
@@ -41,6 +43,8 @@ export default function BottomTabNavigator() {
       </Tab.Screen>
       <Tab.Screen
         name="Setting"
+        title="Setting"
+
         component={Setting}
         options={{
           tabBarLabel: 'Setting',

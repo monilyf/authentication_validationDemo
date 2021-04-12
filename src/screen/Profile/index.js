@@ -13,7 +13,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from "./style";
 import Routes from '../../router/routes'
 import { CommonActions } from '@react-navigation/routers';
-export class Profile extends Component {
+class Profile extends Component {
   constructor(props) {
     super(props);
 

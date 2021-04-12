@@ -58,7 +58,7 @@ class Setting extends React.Component {
           </View>
           <View style={{flexDirection: 'column'}}>
             <BorderComponent />
-            <SubComponent text="Profile" iconName="user-o" color='#b4daf7' onPress={()=>this.props.navigation.navigate(Routes.Profile)}/>
+            <SubComponent text="Profile" iconName="user-o" color='#b4daf7'/>
             <BorderComponent />
 
             <SubComponent text="Terms & Conditions" iconName="file-text-o" color='#f7d8b4'/>

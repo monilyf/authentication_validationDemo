@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Routes from './routes';
 import Home from '../screen/Home';
 import Details from '../screen/Details';
@@ -10,6 +10,13 @@ import Setting from '../screen/Setting';
 import HomeScreenDrawer from '../screen/HomeScreenDrawer';
 import BottomTabNavigator from '../screen/BottomTabNavigator';
 const Stack = createStackNavigator();
+// import CustomDrawer from '../screen/HomeScreenDrawer/CustomDrawer';
+
+// import Icon from 'react-native-vector-icons/FontAwesome';
+// import {createDrawerNavigator} from '@react-navigation/drawer';
+
+// const Drawer = createDrawerNavigator();
+
 
 const Authenticated = () => {
   console.log('Form Authenticated');
@@ -19,6 +26,7 @@ const Authenticated = () => {
         name={Routes.Home}
         // component={HomeScreenDrawer}
         component={BottomTabNavigator}
+        options={{headerShown: false}}
         // options={({navigation}) => ({
         //   title: 'Home',
         //   headerStyle: {
@@ -43,14 +51,41 @@ const Authenticated = () => {
         component={Details}
         options={{headerShown: false}}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name={Routes.Profile}
         component={Profile}
         options={{headerShown: false}}
-      />
+      /> */}
       <Stack.Screen name={Routes.Setting} component={Setting}/>
 
     </Stack.Navigator>
+
+/* <Drawer.Navigator
+initialRouteName="Home"
+drawerContentOptions={{
+  activeTintColor: '#e91e63',
+}}
+drawerContent={props => <CustomDrawer {...props} />}>
+{/* <Drawer.Screen name="Home" component={BottomTabNavigator} />
+<Drawer.Screen
+  name="Home"
+  component={HomeScreenDrawer}
+  options={{
+    drawerIcon: ({color}) => (
+      <Icon name="home" color={color} size={25} />
+    ),
+  }}
+/>
+<Drawer.Screen
+  name="Profile"
+  component={Profile}
+  options={{
+    drawerIcon: ({color}) => (
+      <Icon name="user" color={color} size={25} />
+    ),
+  }}
+/>
+</Drawer.Navigator> */
   );
 };
 
