@@ -12,6 +12,8 @@ target 'authentication_validationDemo' do
     :hermes_enabled => false
   )
 
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
   target 'authentication_validationDemoTests' do
     inherit! :complete
     # Pods for testing

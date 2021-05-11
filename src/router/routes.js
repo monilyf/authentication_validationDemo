@@ -8,7 +8,10 @@ const Routes ={
     Home:"Home",
     Details:"Details",
     Profile:"Profile",
-    Auth:"Auth"
+    Auth:"Auth",
+    Setting:"Setting",
+    HomeScreenDrawer:"HomeScreenDrawer",
+    BottomTabNavigator:"BottomTabNavigator"
 }
 
 export default Routes;

@@ -30,6 +30,7 @@ const InputContainer = (props) => {
           onChangeText={props.onChangeText}
           secureTextEntry={Boolean(props.secureText)}
           keyboardType={props.keyboardType}
+          onBlur={props.onBlur}
         />
         <TouchableOpacity onPress={props.onToggle}>
           <IconError

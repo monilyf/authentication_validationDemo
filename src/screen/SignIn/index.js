@@ -16,13 +16,17 @@ import Routes from '../../router/routes'
 import InputContainer from '../../Components/InputContainer';
 import Picker from 'react-native-country-picker-modal';
 import SubmitButton from '../../Components/SubmitButton';
+import {validation} from '../../Utils/ValidationUtils'
+
 export class SignIn extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       email: '',
+      emailError:'',
       password: '',
+      passwordError:'',
       toggleIcon: 'eye',
       isSecurePassword: true,
     };

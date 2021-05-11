@@ -12,7 +12,8 @@ import ValueContainer from '../../Components/ValueContainer';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from "./style";
 import Routes from '../../router/routes'
-export class Profile extends Component {
+import { CommonActions } from '@react-navigation/routers';
+class Profile extends Component {
   constructor(props) {
     super(props);
 
@@ -31,9 +32,9 @@ export class Profile extends Component {
 
   check_data = async () => {
     try {
-      console.log('registered_data from check_data:', registered_data);
+      // console.log('registered_data from check_data:', login_data);
 
-      let user_data = await AsyncStorage.getItem('registered_data');
+      let user_data = await AsyncStorage.getItem('login_data');
       var parsed = JSON.parse(user_data);
       this.setState({
         firstName: parsed.firstName,
@@ -47,6 +48,23 @@ export class Profile extends Component {
       alert(error);
     }
   };
+
+  resetStack = CommonActions.reset({
+    index:0,
+    routes:[
+      {name:Routes.Splash}
+    ],
+  });
+
+  removeAuthentication = async ()=>{
+    try{
+      console.log('Logout')
+      await AsyncStorage.clear();
+      this.props.navigation.dispatch(this.resetStack);
+    } catch(e){
+      console.log(e)
+    }
+  }
 
   render(props) {
     // console.log('email render', this.state.email, '---', this.state.password);
@@ -92,10 +110,7 @@ export class Profile extends Component {
               <View style={styles.logoutbtn}>
                 <TouchableOpacity
                
-                  onPress={() => {
-                    AsyncStorage.clear();
-                    this.props.navigation.navigate(Routes.SignIn);
-                  }}>
+                  onPress={() => {this.removeAuthentication()}}>
                   <Text
                     style={styles.logout}>
                     Logout
